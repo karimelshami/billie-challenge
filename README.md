@@ -2,8 +2,8 @@
 ## Requirements
 For development, you will only need Node.js installed on your environement.
 ## Install
-    $ git clone https://github.com/karimelshami/rick-and-morty
-    $ cd rick-morty
+    $ git https://github.com/karimelshami/billie-challenge.git
+    $ cd billie-challenge
     $ yarn
 ## Start & watch
     $ yarn start
