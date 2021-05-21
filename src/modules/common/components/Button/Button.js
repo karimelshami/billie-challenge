@@ -1,6 +1,6 @@
 import React from 'react'
 import { CustomButton, Img } from './Button.style'
-import Portal from 'assets/portal.gif'
+import Loading from 'assets/loading.gif'
 import PropTypes from 'prop-types'
 
 const Button = props => {
@@ -12,7 +12,7 @@ const Button = props => {
       {...restProps}
     >
       {text}
-      {loading && <Img src={Portal} alt="loading" />}
+      {loading && <Img src={Loading} alt="loading" />}
     </CustomButton>
   )
 }

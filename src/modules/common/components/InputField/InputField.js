@@ -33,14 +33,12 @@ const InputField = props => {
       extendStyle={extendStyle}
       value={value}
       data-testid="input-field"
-      onKeyPress={e => onKeyPress(e)}
     />
   )
 }
 
 InputField.propTypes = {
   handleChange: PropTypes.func,
-  onKeyPress: PropTypes.func,
   type: PropTypes.string,
   placeholder: PropTypes.string,
   fontSize: PropTypes.string,

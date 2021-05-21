@@ -23,4 +23,5 @@ export const commonInitialState = {
         date_of_first_purchase: "2121-12-24",
       },
     ],
+  selectedCompany : {}
 };

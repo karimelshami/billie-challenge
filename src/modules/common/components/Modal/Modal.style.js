@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const ModalContainer = styled.div`
   padding: 20px 50px;
   vertical-align: middle; 
-  width: 40%;
+  width: 20%;
   overflow: auto;  
   background-color: #fff;
   position: fixed;
@@ -16,6 +16,7 @@ export const ModalContainer = styled.div`
   -webkit-box-shadow: 10px 10px 18px 0px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 10px 10px 18px 0px rgba(0, 0, 0, 0.75);
   box-shadow: 10px 10px 18px 0px rgba(0, 0, 0, 0.75);
+  height:150px;
   ${props => props.theme.media.tablet`
   width: 70%;
   `}

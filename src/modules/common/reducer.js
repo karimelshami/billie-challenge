@@ -6,34 +6,54 @@ const { status } = constants;
 
 export function commonReducer(state = commonInitialState, { payload, type }) {
   switch (type) {
-    case commonActionTypes.GET_ALL_WHATEVER:
+    // case commonActionTypes.GET_ALL_WHATEVER:
+    //   return {
+    //     ...state,
+    //     ...{
+    //       allWhatever: {
+    //         status: status.FETCHING,
+    //       },
+    //     },
+    //   };
+    // case commonActionTypes.GET_ALL_WHATEVER_SUCCESS:
+    //   return {
+    //     ...state,
+    //     ...{
+    //       allWhatever: {
+    //         status: status.SUCCESS,
+    //         ...payload,
+    //       },
+    //     },
+    //   };
+    // case commonActionTypes.GET_ALL_WHATEVER_FAIL:
+    //   return {
+    //     ...state,
+    //     ...{
+    //       allWhatever: {
+    //         status: status.FAIL,
+    //       },
+    //     },
+    //   };
+    case commonActionTypes.SET_SELECTED_COMPANY:
       return {
         ...state,
         ...{
-          allWhatever: {
-            status: status.FETCHING,
-          },
+          selectedCompany: payload,
         },
       };
-    case commonActionTypes.GET_ALL_WHATEVER_SUCCESS:
+    case commonActionTypes.EDIT_COMPANY:
+      console.log(payload, "PAYLOAD");
+      let index = payload.index;
+      let editedCompaniesList = [...state.companies];
+      delete payload.index;
+      editedCompaniesList[index] = payload;
       return {
         ...state,
         ...{
-          allWhatever: {
-            status: status.SUCCESS,
-            ...payload,
-          },
+          companies: editedCompaniesList,
         },
       };
-    case commonActionTypes.GET_ALL_WHATEVER_FAIL:
-      return {
-        ...state,
-        ...{
-          allWhatever: {
-            status: status.FAIL,
-          },
-        },
-      };
+
     default:
       return state;
   }
