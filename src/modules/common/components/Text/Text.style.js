@@ -50,6 +50,7 @@ export const CustomText = styled.span`
           color: ${props.theme.red};
           font-weight: 700;
           display:block;
+          text-align:center;
         ${props.theme.media.tablet`font-size:13px;`}
         ${props.theme.media.phone`font-size:12px;`}`
        }
