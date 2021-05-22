@@ -1,15 +1,16 @@
-import styled from 'styled-components'
+import styled from "styled-components";
 
 export const CustomText = styled.span`
   padding: 5px;
-  ${props => props.extendStyle || ''};
-  ${props =>
+  ${(props) => props.extendStyle || ""};
+  ${(props) =>
     props &&
     `
-        margin: ${props.margin};
-        text-align:${props.textAlign};
-        ${props.mainText &&
-          `
+      margin: ${props.margin};
+      text-align:${props.textAlign};
+      ${
+        props.mainText &&
+        `
         font-size: 18px;
         color: ${props.theme.main};
         font-weight: 700;
@@ -20,30 +21,48 @@ export const CustomText = styled.span`
         `}
         ${props.theme.media.phone`
         font-size:15px;
-        `}`}
-        ${props.primaryText &&
-          `
-        font-size: 18px;
-        color: ${props.theme.primary};
-        font-weight: 700;
-        display:block;
-        ${props.theme.media.tablet`
-        font-size:16px;
-        `}
-        ${props.theme.media.phone`
-        font-size:15px;
-        `}`}
-        ${props.secondaryText &&
-          `
-        font-size: 14px;
-        color: ${props.theme.main};
-        font-weight: 400;
-        display:block;
-        ${props.theme.media.tablet`
-        font-size:13px;
-        `}
-        ${props.theme.media.phone`
-        font-size:12px;
-        `}`}
-`}
-`
+        `}`
+      }
+      ${
+        props.primaryText &&
+        `
+          font-size: 18px;
+          color: ${props.theme.primary};
+          font-weight: 700;
+          display:block;
+          ${props.theme.media.tablet` font-size:16px;`}
+        ${props.theme.media.phone`font-size:15px;`}`
+      }
+      ${
+        props.secondaryText &&
+        `
+          font-size: 14px;
+          color: ${props.theme.main};
+          font-weight: 400;
+          display:block;
+        ${props.theme.media.tablet`font-size:13px;`}
+        ${props.theme.media.phone`font-size:12px;`}`
+      }
+       ${
+         props.errorText &&
+         `
+          font-size: 14px;
+          color: ${props.theme.red};
+          font-weight: 700;
+          display:block;
+        ${props.theme.media.tablet`font-size:13px;`}
+        ${props.theme.media.phone`font-size:12px;`}`
+       }
+       ${
+        props.successText &&
+        `
+         font-size: 14px;
+         color: ${props.theme.green};
+         font-weight: 400;
+         display:block;
+         font-style: "italic";
+       ${props.theme.media.tablet`font-size:13px;`}
+       ${props.theme.media.phone`font-size:12px;`}`
+      }
+  `}
+`;

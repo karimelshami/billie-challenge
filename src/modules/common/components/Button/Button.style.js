@@ -1,14 +1,14 @@
 import styled from 'styled-components'
 
 export const CustomButton = styled.div`
-  background-color: ${props => props.theme.secondary};
+  background-color: ${props => props.theme.primary};
   border-color: ${props => props.theme.secondary};
   text-transform: uppercase;
   display: flex;
   justify-content: center;
   cursor: pointer;
   height: 35px;
-  color: ${props => props.theme.main};
+  color: ${props => props.theme.white};
   font-weight: 700;
   font-size: 15px;
   border-radius: 5px;
@@ -16,7 +16,7 @@ export const CustomButton = styled.div`
   margin-bottom: 10px;
   line-height: 35px;
   &&:hover {
-    background-color: ${props => props.theme.primary};
+    background-color: ${props => props.theme.red};
     color: #fff;
   }
   ${props => props.extendStyle || ''};

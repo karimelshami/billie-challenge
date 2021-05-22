@@ -10,7 +10,9 @@ const Text = props => {
     primaryText,
     text,
     mainText,
-    extendStyle
+    extendStyle,
+    errorText,
+    successText
   } = props
   return (
     <CustomText
@@ -20,6 +22,8 @@ const Text = props => {
       secondaryText={secondaryText}
       mainText={mainText}
       extendStyle={extendStyle}
+      errorText ={errorText}
+      successText ={successText}
     >
       {text}
     </CustomText>
@@ -32,6 +36,8 @@ Text.propTypes = {
   textAlign: PropTypes.string,
   primaryText: PropTypes.bool,
   secondaryText: PropTypes.bool,
+  successText: PropTypes.bool,
+  errorText : PropTypes.bool,
   mainText: PropTypes.bool,
   extendStyle: PropTypes.oneOfType([PropTypes.string, PropTypes.array])
 }

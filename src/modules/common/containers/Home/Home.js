@@ -11,23 +11,28 @@ import { commonActions } from "modules/common";
 import { tableHead } from "./Home.constants";
 import Logo from "assets/logo.png";
 import { useSelector, shallowEqual, useDispatch } from "react-redux";
-import { Form } from "./Home.style";
 import Modal from "modules/common/components/Modal";
 import Text from "modules/common/components/Text";
 import InputField from "modules/common/components/InputField";
 import Button from "modules/common/components/Button";
+import SuccessMessage from "modules/common/components/SuccessMessage";
 import { numberFormater } from "utils/functions";
+import { constants } from "utils";
+
 const Home = () => {
   const dispatch = useDispatch();
 
-  const { companies, selectedCompany } = useSelector(
+  const { companies, selectedCompany, isSelectedCompanyUpdated } = useSelector(
     (state) => ({
       companies: state.common.companies,
       selectedCompany: state.common.selectedCompany,
+      isSelectedCompanyUpdated:
+        state.common.selectedCompany.status === constants.status.SUCCESS,
     }),
     shallowEqual
   );
   const [isBudgetModalOpen, setIsBudgetModalOpen] = useState(false);
+  const [isBudgetInvalid, setIsBudgetInvalid] = useState(false);
 
   const toggleBudgetModal = (companyObj, index) => {
     setIsBudgetModalOpen(!isBudgetModalOpen);
@@ -42,36 +47,47 @@ const Home = () => {
     );
 
   const editBudget = () => {
-    validateBudget()
+    if (!validateBudget()) return;
     dispatch(commonActions.editCompany(selectedCompany));
     //TODO: when the budget is sumbitted successfully a  success msg should be display
-    setIsBudgetModalOpen(false);
   };
 
-  const validateBudget =()=>{
+  const validateBudget = () => {
     //TODO: VALIDATE that budget is number and budget is not smaller than the original budget
-    if(selectedCompany.budget < companies[selectedCompany.index].budget){
-      alert('invalid')
+    if (selectedCompany.budget < companies[selectedCompany.index].budget) {
+      setIsBudgetInvalid(true);
+      return false;
     }
-  }
+    return true;
+  };
 
   const renderModalContent = () => {
     return (
-      <div>
-        <Text primaryText text={selectedCompany.name} />
-        <InputField
-          placeholder={`Edit ${selectedCompany.name} budget`}
-          handleChange={(e) => handleInputChange(e.target.value)}
-          value={selectedCompany.budget}
-        />
-        <Button
-          data-testid="submit--button"
-          handleClick={ editBudget  }
-          // extendStyle={extendSearchButtonStyle}
-          text={"Save budget"}
-          // loading={filter.name && showSearchingLoader}
-        />
-      </div>
+      <>
+        {isSelectedCompanyUpdated ? (
+          <SuccessMessage msg="Budget edited successfully" />
+        ) : (
+          <>
+            <InputField
+              placeholder={`Edit ${selectedCompany.name} budget`}
+              handleChange={(e) => handleInputChange(e.target.value)}
+              value={selectedCompany.budget}
+              type="number"
+            />
+            {isBudgetInvalid && (
+              <Text
+                errorText
+                text={"You must enter a budget greater than the older budget"}
+              />
+            )}
+            <Button
+              data-testid="submit--button"
+              handleClick={editBudget}
+              text={"Save budget"}
+            />
+          </>
+        )}
+      </>
     );
   };
 
@@ -93,7 +109,12 @@ const Home = () => {
                 title="edit budget"
               >
                 <TableCell>{obj.name}</TableCell>
-                <TableCell>{obj.date_of_first_purchase}</TableCell>
+                <TableCell>
+                  {new Date(obj.date_of_first_purchase).toLocaleDateString(
+                    "de-DE"
+                  )}
+                </TableCell>
+
                 <TableCell>{numberFormater(obj.budget, 2)}</TableCell>
                 <TableCell>{numberFormater(obj.budget_spent, 2)}</TableCell>
                 <TableCell>
@@ -105,7 +126,11 @@ const Home = () => {
         </TableBody>
       </Table>
       {isBudgetModalOpen && (
-        <Modal onClose={toggleBudgetModal} content={renderModalContent()} />
+        <Modal
+          onClose={toggleBudgetModal}
+          title={selectedCompany.name}
+          content={renderModalContent()}
+        />
       )}
     </>
   );

@@ -19,7 +19,12 @@ export const Table = styled.table`
 export const TableBody = styled.tbody``;
 
 export const TableHead = styled.thead`
-  background-color: #f6f6f6;
+  ${(props) =>
+    props &&
+    `
+  background-color: ${props.theme.lightGrey};
+
+  `}
   font-weight: 700;
 `;
 
