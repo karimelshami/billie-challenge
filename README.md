@@ -20,7 +20,6 @@ For development, you will only need Node.js installed on your environement.
 - JSX
 - React
 - Redux
-- Redux saga
 - React hooks
 - Styled components
 
@@ -52,7 +51,6 @@ For development, you will only need Node.js installed on your environement.
     │  │     │  └─ MainContainer    ### used to wrap the app with redux-store/react-router/theme/globle-styles
     │  │     ├─ index.js    ### used to export redux related files
     │  │     ├─ reducer.js  ### used to group common module reducers
-    │  │     └─ saga.js     ### used to group common module sagas
     │  │  └─ home ### used to group all home related componants & containers
     │  │     ├─ action-types.js ### used to group home module action types
     │  │     ├─ actions.js      ### used to group home module actions
@@ -66,7 +64,6 @@ For development, you will only need Node.js installed on your environement.
     │  ├─ redux    ### root redux folder
     │  │  ├─ initialState.js    ### used to group all modules intial state
     │  │  ├─ reducer.js         ### used to group all modules reducers
-    │  │  ├─ saga.js            ### used to group all modules sagas
     │  │  └─ store.js           ### project store
     │  ├─ routes    ### used to group all project routes
     │  ├─ utils     ### used to group common project utils
