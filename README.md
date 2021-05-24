@@ -1,4 +1,4 @@
-## REACT REDUX BASE PROJECT
+## Billie Challange
 
 ## Requirements
 
