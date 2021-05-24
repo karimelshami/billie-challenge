@@ -1,25 +1,35 @@
 ## REACT REDUX BASE PROJECT
+
 ## Requirements
+
 For development, you will only need Node.js installed on your environement.
+
 ## Install
+
     $ git https://github.com/karimelshami/billie-challenge.git
     $ cd billie-challenge
     $ yarn
+
 ## Start & watch
+
     $ yarn start
+
 ## Languages,tools & technologies
-* Javascript
-* JSX
-* React
-* Redux
-* Redux saga
-* React hooks
-* Styled components
+
+- Javascript
+- JSX
+- React
+- Redux
+- Redux saga
+- React hooks
+- Styled components
+
 ## Project Tree
+
 ```
-    ├─ .eslintrc 
-    ├─ .git      
-    ├─ .gitignore 
+    ├─ .eslintrc
+    ├─ .git
+    ├─ .gitignore
     ├─ jsconfig.json
     ├─ node_modules
     ├─ package.json
@@ -33,7 +43,7 @@ For development, you will only need Node.js installed on your environement.
     │  ├─ assets    ### used to group all project assets
     │  ├─ index.js  ### project index
     │  ├─ modules   ### used to group all the project modules
-    │  │  └─ common ### used to group all shared componants & containers 
+    │  │  └─ common ### used to group all shared componants & containers
     │  │     ├─ action-types.js ### used to group common module action types
     │  │     ├─ actions.js      ### used to group common module actions
     │  │     ├─ api.js          ### used to group common module apis
@@ -43,6 +53,16 @@ For development, you will only need Node.js installed on your environement.
     │  │     ├─ index.js    ### used to export redux related files
     │  │     ├─ reducer.js  ### used to group common module reducers
     │  │     └─ saga.js     ### used to group common module sagas
+    │  │  └─ home ### used to group all shared componants & containers
+    │  │     ├─ action-types.js ### used to group home module action types
+    │  │     ├─ actions.js      ### used to group home module actions
+    │  │     ├─ api.js          ### used to group home module apis
+    │  │     ├─ components      ### used to group home module presentational componants
+    │  │     ├─ containers      ### used to group home module container
+    │  │     │  └─ MainContainer    ### used to wrap the app with redux-store/react-router/theme/globle-styles
+    │  │     ├─ index.js    ### used to export redux related files
+    │  │     ├─ reducer.js  ### used to group home module reducers
+    │  │     └─ saga.js     ### used to group home module sagas
     │  ├─ redux    ### root redux folder
     │  │  ├─ initialState.js    ### used to group all modules intial state
     │  │  ├─ reducer.js         ### used to group all modules reducers
@@ -55,18 +75,5 @@ For development, you will only need Node.js installed on your environement.
     │  │  ├─ request.js     ### axios wrapper
     │  │  ├─ theme.js       ### styled componants theme configarations including media queries/common colors
     │  │  └─ urls.js        ### used to group all project urls
-    │  └─ __mocks__         ### root testing mocks folder 
-    │     ├─ app
-    │     │  └─ redux
-    │     │     └─ store.js
-    │     └─ axios.js
     └─ yarn.lock
 ```
-
-
-
-
-
-
-
-
