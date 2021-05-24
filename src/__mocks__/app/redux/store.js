@@ -1,12 +1,12 @@
 import configureMockStore from 'redux-mock-store';
-import { initialState } from 'redux/initialStates';
+import { homeInitialState ,commonInitialState } from 'redux/initialState';
 
 
 var store = undefined;
 
 const initialState = {
-  initialState: initialState,
-
+  home: homeInitialState,
+  common : commonInitialState
 };
 
 function configureStore(state = initialState) {

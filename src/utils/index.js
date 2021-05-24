@@ -3,5 +3,5 @@ import * as functions from './functions'
 
 export {
     constants,
-    functions
+    functions,
 }

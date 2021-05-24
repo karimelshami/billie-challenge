@@ -46,7 +46,7 @@ const Home = () => {
   };
 
   const validateBudget = () => {
-    if (selectedCompany.budget <= companies[selectedCompany.index].budget) {
+    if (selectedCompany.budget <= companies[selectedCompany.index].budget_spent) {
       setIsBudgetInvalid(true);
       return false;
     }

@@ -34,7 +34,7 @@ const BudgetModal = (props) => {
               {isBudgetInvalid && (
                 <Text
                   errorText
-                  text={"You must enter a budget greater than the older budget"}
+                  text={"You must enter a budget greater than the budget spent"}
                 />
               )}
               <Button

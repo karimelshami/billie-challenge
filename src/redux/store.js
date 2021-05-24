@@ -11,6 +11,10 @@ const bindMiddleware = (middleware) => {
   return applyMiddleware(...middleware);
 };
 
-const store = createStore(combinedReducers, intialState, bindMiddleware([]));
+const getStore = () => {
+  const store = createStore(combinedReducers, intialState, bindMiddleware([]));
 
-export { store };
+  return store;
+};
+
+export { getStore };
