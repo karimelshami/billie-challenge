@@ -53,13 +53,13 @@ For development, you will only need Node.js installed on your environement.
     │  │     ├─ index.js    ### used to export redux related files
     │  │     ├─ reducer.js  ### used to group common module reducers
     │  │     └─ saga.js     ### used to group common module sagas
-    │  │  └─ home ### used to group all shared componants & containers
+    │  │  └─ home ### used to group all home related componants & containers
     │  │     ├─ action-types.js ### used to group home module action types
     │  │     ├─ actions.js      ### used to group home module actions
     │  │     ├─ api.js          ### used to group home module apis
     │  │     ├─ components      ### used to group home module presentational componants
     │  │     ├─ containers      ### used to group home module container
-    │  │     │  └─ MainContainer    ### used to wrap the app with redux-store/react-router/theme/globle-styles
+    │  │     │  └─ Home    ###  used to display all companies 
     │  │     ├─ index.js    ### used to export redux related files
     │  │     ├─ reducer.js  ### used to group home module reducers
     │  │     └─ saga.js     ### used to group home module sagas
